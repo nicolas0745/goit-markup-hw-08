@@ -1,0 +1,42 @@
+.services {
+    display: none;
+    &__list {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-basis: calc((100% - 60px) / 3);
+        height: 294px;
+        background-size: cover;
+    }
+    
+    &__item--desktop {
+        background-image: url("../images/image.jpg");
+    }
+    
+    &__item--app {
+        background-image: url("../images/imege2.jpg");
+    }
+    
+    &__item--design {
+        background-image: url("../images/image3.jpg");
+    }
+    
+    &__title {
+        font-size: 14px;
+        text-align: center;
+        padding: 27px 0px;
+        color: #f5f4fa;
+        background: rgba(47, 48, 58, 0.8);
+    }
+    @include desktop {
+        display: flex;
+    }
+}
+
+
+    

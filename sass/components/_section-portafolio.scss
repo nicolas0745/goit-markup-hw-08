@@ -1,0 +1,93 @@
+.portafolio {
+    &__button-list {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+    
+    &__button {
+        border-radius: 4px;
+        background-color: #f5f4fa;
+        border-style: none;
+        padding: 6px 24px;
+        color: $font-color;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover {
+            background-color: $principal-color;
+            color: $color-white;
+            cursor: pointer;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+        }
+    }
+    
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    &__item {
+        width: 100%;
+        background-color: $color-white;
+        border: 1px solid #eeeeee;
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);;
+            .cards__text-hidden {
+                top: 0;
+            }
+        }
+        @include tablet {
+            width: calc((100% - 60px) / 2);
+        }
+        @include desktop {
+            width: calc((100% - 90px) / 3);
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 294px;
+        object-fit: cover;
+    }
+    &__hidden {
+        position: relative;
+        overflow: hidden;
+        height: fit-content  
+    }
+    &__text-hidden {
+        position: absolute;
+        display: grid;
+        align-items: center ;
+        top: 100%;
+        background: rgba(33, 150, 243, 0.90);
+        height: 100%;
+        align-content: center;
+        color: $color-white;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: 0.54px;
+        padding: 24px;
+        transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    &__footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 24px;
+    }
+    &__name {
+        font-size: 18px;
+        line-height: 2;
+    }
+    &__description{
+        font-size: 16px;
+        font-weight: 400;
+        color: $description-color;
+        line-height: 1.87;
+    }
+}

@@ -1,0 +1,71 @@
+.title {   
+    position: relative;
+    background: url("../images/background-mobile.jpg");
+    @include image-position();
+    
+    @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {  
+        background-image: url('../images/background-mobile@2x.jpg');
+    }
+
+    @include tablet {
+        background: url("../images/background-tablet.jpg");
+        @include image-position();
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {  
+            background-image: url('../images/background-tablet@2x.jpg');     
+        }
+    }
+
+    @include desktop {
+        background: url("../images/background-desktop.jpg");
+        @include image-position();
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {  
+            background-image: url('../images/background-desktop@2x.jpg');     
+        }
+    }
+  
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(47, 48, 58, 0.40);
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        padding: 118px 60px;
+        @include desktop {
+            padding: 200px 452px;
+        }
+    }
+    &__text {
+        color: $color-white;
+        font-size: 26px;
+        font-weight: 900;
+        width: 360px;
+        text-align: center;
+        margin-bottom: 30px;
+        @include desktop {
+            font-size: 44px;
+            width: 696px;
+        }
+    }
+    .button--title {
+        width: 261px;
+        padding: 10px 0;  
+    }
+}
+

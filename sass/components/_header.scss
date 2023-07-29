@@ -1,0 +1,100 @@
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ECECEC;
+    }
+    &__nav {
+        display: flex;
+        flex: 2 2 auto;
+        align-items: center;
+    }
+    &__logo {
+        margin: 25px 0;
+    }
+    &__open-button {
+        margin-left: auto;
+        background: none;
+        border: none;
+        @include tablet {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+            .icon {
+                fill: $principal-color;
+            }
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &__list {
+        display: none;
+        align-items: center;
+        margin: 0 0 0 70px;
+        position: relative;
+        @include tablet {
+            display: flex;
+        }
+    }
+    &__link {
+        position: relative;
+        font-weight: 500;   
+        line-height: 1.17;
+        padding: 5px 0;
+        margin: 0 25px;
+        color: $font-color
+    }
+    &__contact-container {
+        display: none;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        @include desktop {
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+    .active {
+        color: $principal-color;
+        &::before {
+            content: '';
+            border: 2px solid $principal-color;
+            position: absolute;
+            top: 51px;
+            width: 100%;
+            border-radius: 2px;
+        }
+    }
+}
+
+
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    color: $description-color;
+    font-weight: 500;
+    gap: 8px;
+    &:hover{
+        .header-contact__icon {
+             fill: $principal-color;
+         }
+    }
+    &__icon {
+        fill: $description-color;
+    }
+}
+
+.icon-mail {
+    width: 26px;
+}
+
+.icon-phone {
+    width: 20px;
+    height: 16px;
+}
